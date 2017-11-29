@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	.header
+		h1 CONTACT
+		h1 #{message}
+	.container
+		form(action="/send", method='POST')
+			.form-group
+				label(for="name") Name
+				input#name(type="text" class="form-control" name="name")
+			.form-group
+				label(for="email") Email Address
+				input#name(type="text" class="form-control" name="email")
+			.form-group
+				label(for="phone") Phone
+				input#name(type="text" class="form-control" name="phone")
+			.form-group
+				label(for="message") Message
+				textarea#message(name="message", cols="30", rows="10" class="form-control")
+			button.btn.btn-primary(type="submit") Submit
