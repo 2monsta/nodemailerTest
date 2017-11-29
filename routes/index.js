@@ -32,11 +32,13 @@ router.get('/', function(req, res, next) {
 
 
 router.post("/send", (req, res, next)=>{
-	var email = req.body.email
-	var content = req.body.message,
-		name = req.body.name,
-		phone = req.body.phone,
-		finalMessage = `${content} \n\n phone: ${phone} \n email: ${email}`;
+	var {email, name, phone} = req.body;
+
+	// var email = req.body.email
+	var content = req.body.message;
+	// 	name = req.body.name,
+	// 	phone = req.body.phone,
+	var finalMessage = `${content} \n\n phone: ${phone} \n email: ${email}`;
 	var mail = {
 		from: email,
 		to: 'yunf.li37@gmail.com',
